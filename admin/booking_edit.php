@@ -3,7 +3,6 @@
 $error  = "";
 $sukses = "";
 
-// Tangkap ID dari URL
 $id = isset($_GET['id']) ? mysqli_real_escape_string($koneksi, $_GET['id']) : "";
 
 if ($id == "") {
@@ -11,8 +10,6 @@ if ($id == "") {
     exit();
 }
 
-// Ambil data detail booking 
-// (Menyesuaikan relasi jika id_kamar masih kosong)
 $sql1 = "SELECT booking.*, user.nama, user.no_hp, kamar.nomor_kamar, tipe_kamar.nama_tipe 
          FROM booking 
          LEFT JOIN user ON booking.id_user = user.id_user 
@@ -26,13 +23,11 @@ if (!$r1) {
     $error = "Data pesanan tidak ditemukan di database.";
 }
 
-// Proses update status dan penetapan kamar
 if (isset($_POST['simpan'])) {
     $status_baru = mysqli_real_escape_string($koneksi, $_POST['status']);
     $id_kamar_baru = mysqli_real_escape_string($koneksi, $_POST['id_kamar']);
     $id_kamar_lama = $r1['id_kamar'];
 
-    // --- VALIDASI BARU: Cegah error kalau lupa pilih kamar ---
     if (($status_baru == 'Confirmed' || $status_baru == 'Check-in') && ($id_kamar_baru == '' || $id_kamar_baru == '0')) {
         $error = "GAGAL: Kamu WAJIB memilih Nomor Kamar di menu dropdown jika statusnya Confirmed atau Check-in!";
     } else {

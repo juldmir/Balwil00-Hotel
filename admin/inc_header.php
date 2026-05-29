@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Cek login admin
+
 if (!isset($_SESSION['admin_username'])) {
     header("location:login.php");
     exit();
@@ -8,7 +8,6 @@ if (!isset($_SESSION['admin_username'])) {
 include "../inc/inc_koneksi.php";
 include "../inc/inc_fungsi.php";
 
-// Dapatkan nama file saat ini untuk menentukan menu yang aktif
 $page_name = basename($_SERVER['PHP_SELF']);
 ?>
 
@@ -22,6 +21,8 @@ $page_name = basename($_SERVER['PHP_SELF']);
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/admin-style.css">
 </head>
 
 <body class="container">
