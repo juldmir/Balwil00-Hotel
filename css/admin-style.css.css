@@ -305,3 +305,72 @@ td.label { width: 35%; font-weight: bold; color: #364f6b; }
 }
 
 .error ul { margin-left: 20px; margin-top: 5px; }
+
+/* ==========================================================================
+   CSS TAMBAHAN UNTUK SERAGAMKAN HALAMAN TAMU, REVIEW, DAN DATA LAINNYA
+   ========================================================================== */
+
+/* 1. Seragamkan Ukuran Font & Gaya Judul Halaman (H1) */
+h1 {
+    color: #0b132b !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+    border-left: 5px solid #c7a668 !important;
+    padding-left: 15px !important;
+}
+
+/* 2. Seragamkan Desain Tabel Data (Biar Jarak & Teks di Tabel Tamu/Review Sama) */
+.table {
+    font-size: 15px !important; /* Menyamakan ukuran teks di semua tabel */
+    vertical-align: middle !important;
+    background-color: #ffffff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.table thead th {
+    background-color: #1c2541 !important; /* Warna Navy Soft untuk Header Tabel */
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 12px 15px !important;
+    border: none !important;
+}
+
+.table tbody td {
+    padding: 12px 15px !important; /* Menyamakan jarak antar baris */
+    color: #334155 !important;
+}
+
+/* 3. Seragamkan Form Pencarian & Tombol di Atas Tabel */
+.form-control, .form-select {
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+.btn-primary {
+    background-color: #0b132b !important;
+    border-color: #0b132b !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    transition: all 0.2s !important;
+}
+
+.btn-primary:hover {
+    background-color: #1c2541 !important;
+    border-color: #1c2541 !important;
+}
+
+/* 4. Seragamkan Gaya Badge / Label Status */
+.badge {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+}

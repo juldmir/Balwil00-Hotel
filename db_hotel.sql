@@ -83,11 +83,11 @@ CREATE TABLE tipe_kamar (
 );
 
 INSERT INTO tipe_kamar (id_tipe, nama_tipe, harga, stok, fasilitas, foto) VALUES
-(1, 'Standard', 350000.00, 40, 'Kasur Twin/Double, AC, TV 32 inch, WiFi, Kamar Mandi Shower, Perlengkapan Mandi Dasar, Akses Kolam Renang, Akses Gym', 'tipe_1.jpg'),
-(2, 'Superior', 550000.00, 25, 'Kasur Queen, AC, Smart TV 40 inch, WiFi Cepat, Kulkas Mini, Pembuat Kopi/Teh, Kamar Mandi Shower, Akses Kolam Renang, Akses Gym', 'tipe_2.jpg'),
-(3, 'Deluxe', 850000.00, 20, 'Kasur King, AC, Smart TV 43 inch, WiFi Cepat, Area Duduk (Sofa), Minibar, Safe Deposit Box, Balkon, Akses Kolam Renang, Akses Gym', 'tipe_3.jpg'),
-(4, 'Suite', 1300000.00, 10, 'Kasur King, Ruang Tamu Terpisah, Smart TV 50 inch, Bathtub, Minibar Premium, Mesin Espresso, Akses Lounge, Akses Kolam Renang, Akses Gym', 'tipe_4.jpg'),
-(5, 'Presidential Suite', 2000000.00, 5, '2 Kasur King, Ruang Tamu dan Ruang Makan Terpisah, Private Jacuzzi, Dapur Mini, Layanan Butler 24 Jam, Private Pool, Private Gym Access', 'tipe_5.jpg');
+(1, 'Standard', 550000.00, 40, 'Kasur Twin/Double, AC, TV 32 inch, WiFi, Kamar Mandi Shower, Perlengkapan Mandi Dasar, Akses Kolam Renang, Akses Gym', 'tipe_1.jpg'),
+(2, 'Superior', 850000.00, 25, 'Kasur Queen, AC, Smart TV 40 inch, WiFi Cepat, Kulkas Mini, Pembuat Kopi/Teh, Kamar Mandi Shower, Akses Kolam Renang, Akses Gym', 'tipe_2.jpg'),
+(3, 'Deluxe', 1250000.00, 20, 'Kasur King, AC, Smart TV 43 inch, WiFi Cepat, Area Duduk (Sofa), Minibar, Safe Deposit Box, Balkon, Akses Kolam Renang, Akses Gym', 'tipe_3.jpg'),
+(4, 'Suite', 1650000.00, 10, 'Kasur King, Ruang Tamu Terpisah, Smart TV 50 inch, Bathtub, Minibar Premium, Mesin Espresso, Akses Lounge, Akses Kolam Renang, Akses Gym', 'tipe_4.jpg'),
+(5, 'Presidential Suite', 2500000.00, 5, '2 Kasur King, Ruang Tamu dan Ruang Makan Terpisah, Private Jacuzzi, Dapur Mini, Layanan Butler 24 Jam, Private Pool, Private Gym Access', 'tipe_5.jpg');
 
 
 -- ==========================================

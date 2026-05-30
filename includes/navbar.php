@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balwil Hotel</title>
-    <link rel="stylesheet" href="/hotel-app/css/style.css">
+    <link rel="stylesheet" href="/web-hotel/Balwil00-Hotel/css/style.css">
 </head>
 <body>
 
@@ -21,18 +21,17 @@
 
     <nav>
         <ul class="nav-menu">
-            <li><a href="/hotel-app/user/home.php" class="<?php echo ($current_page == 'home') ? 'active' : ''; ?>">Beranda</a></li>
+            <li><a href="/web-hotel/Balwil00-Hotel/user/home.php" class="<?php echo ($current_page == 'home') ? 'active' : ''; ?>">Beranda</a></li>
             <li class="dot">&#9679;</li>
-            <li><a href="/hotel-app/user/kamar.php" class="<?php echo ($current_page == 'kamar') ? 'active' : ''; ?>">Kamar</a></li>
+            <li><a href="/web-hotel/Balwil00-Hotel/user/kamar.php" class="<?php echo ($current_page == 'kamar') ? 'active' : ''; ?>">Kamar</a></li>
             <li class="dot">&#9679;</li>
-            <li><a href="/hotel-app/user/booking.php" class="<?php echo ($current_page == 'booking') ? 'active' : ''; ?>">Booking</a></li>
+            <li><a href="/web-hotel/Balwil00-Hotel/user/booking.php" class="<?php echo ($current_page == 'booking') ? 'active' : ''; ?>">Booking</a></li>
             <li class="dot">&#9679;</li>
-            <li><a href="/hotel-app/user/pembayaran.php" class="<?php echo ($current_page == 'pembayaran') ? 'active' : ''; ?>">Pembayaran</a></li>
+            <li><a href="/web-hotel/Balwil00-Hotel/user/pembayaran.php" class="<?php echo ($current_page == 'pembayaran') ? 'active' : ''; ?>">Pembayaran</a></li>
             <li class="dot">&#9679;</li>
-            <li><a href="/hotel-app/user/review.php" class="<?php echo ($current_page == 'review') ? 'active' : ''; ?>">Review</a></li>
+            <li><a href="/web-hotel/Balwil00-Hotel/user/review.php" class="<?php echo ($current_page == 'review') ? 'active' : ''; ?>">Review</a></li>
             <li class="dot">&#9679;</li>
-            <li><a href="/hotel-app/user/riwayat.php" class="<?php echo ($current_page == 'riwayat') ? 'active' : ''; ?>">Riwayat</a></li>
+            <li><a href="/web-hotel/Balwil00-Hotel/user/riwayat.php" class="<?php echo ($current_page == 'riwayat') ? 'active' : ''; ?>">Riwayat</a></li>
         </ul>
     </nav>
 </header>
-
