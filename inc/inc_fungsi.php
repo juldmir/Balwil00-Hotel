@@ -1,11 +1,18 @@
 <?php
-// --- FUNGSI UTAMA ---
+// --- FUNGSI UTAMA (Diperbaiki agar kebal terhadap sub-folder admin) ---
 function url_dasar(){
-    $url_dasar  = "http://".$_SERVER['SERVER_NAME'].dirname($_SERVER['SCRIPT_NAME']);
-    return $url_dasar;
+    $direktori = dirname($_SERVER['SCRIPT_NAME']);
+    // Jika dipanggil dari dalam folder admin, bersihkan /admin dari komponen URL
+    $direktori = str_replace('/admin', '', $direktori);
+    
+    // Normalisasi backslash jika berjalan di OS Windows lingkungan lokal
+    $direktori = str_replace('\\', '', $direktori);
+    
+    $url_dasar  = "http://".$_SERVER['SERVER_NAME'].$direktori;
+    return rtrim($url_dasar, '/');
 }
 
-// --- FUNGSI TAMBAHAN (Wajib Ditambahkan) ---
+// --- FUNGSI TAMBAHAN ---
 function dapatkan_id() {
     return isset($_GET['id']) ? $_GET['id'] : "";
 }
@@ -43,7 +50,7 @@ function ambil_gambar_halaman($id_tulisan){
     return $gambar;
 }
 
-// --- FUNGSI TAMBAHAN YANG DIMINTA INDEX.PHP (PERBAIKAN ERROR) ---
+// --- FUNGSI AMBIL DATA HALAMAN ---
 function ambil_kutipan($id_halaman) {
     global $koneksi;
     $sql    = "SELECT kutipan FROM halaman WHERE id = '$id_halaman'";
@@ -72,7 +79,6 @@ function buat_link_halaman($id_halaman) {
     return url_dasar() . "/halaman.php?id=" . $id_halaman;
 }
 
-
 // --- FUNGSI UNTUK HOTEL ---
 function tipe_kamar_foto($id){
     global $koneksi;
@@ -81,14 +87,15 @@ function tipe_kamar_foto($id){
     $r1     = mysqli_fetch_array($q1);
     $foto   = isset($r1['foto']) ? $r1['foto'] : '';
 
-    if($foto && file_exists("../gambar/".$foto)){
+    // Gunakan path relatif dari root folder asset gambar
+    if($foto && file_exists(__DIR__ . "/../gambar/".$foto)){
         return $foto;
     }else{
         return 'kamar_default.jpg'; 
     }
 }
 
-// --- FUNGSI EMAIL (PHPMailer) ---
+// --- FUNGSI EMAIL (PHPMailer - Diperbaiki jalur autoload-nya) ---
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -96,7 +103,8 @@ function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
     $email_pengirim     = "hotelmu@email.com"; 
     $password_pengirim  = "GANTI_DENGAN_APP_PASSWORD_GOOGLE"; 
 
-    require getcwd().'/vendor/autoload.php';
+    // Menggunakan __DIR__ agar mencari folder vendor mundur 1 tingkat dari posisi file fungsi saat ini
+    require_once __DIR__ . '/../vendor/autoload.php';
     $mail = new PHPMailer(true);
 
     try {
@@ -120,3 +128,4 @@ function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
         return "gagal: {$mail->ErrorInfo}";
     }
 }
+?>

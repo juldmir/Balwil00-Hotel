@@ -49,7 +49,8 @@ if ($sukses) {
             <th class="col-1">#</th>
             <th>Nomor Kamar</th>
             <th>Tipe Kamar</th>
-            <th>Status</th>
+            <th>Stok Tipe</th> 
+            <th>Status Fisik</th>
             <th class="col-2">Aksi</th>
         </tr>
     </thead>
@@ -67,8 +68,8 @@ if ($sukses) {
             $sqltambahan    = " where " . implode(" or ", $sqlcari);
         }
         
-        // Query menggunakan LEFT JOIN untuk menggabungkan tabel kamar dan tipe_kamar
-        $sql1   = "select kamar.*, tipe_kamar.nama_tipe from kamar left join tipe_kamar on kamar.id_tipe = tipe_kamar.id_tipe $sqltambahan";
+        // UBAHAN 2: Tambahin tipe_kamar.stok di dalam query select
+        $sql1   = "select kamar.*, tipe_kamar.nama_tipe, tipe_kamar.stok from kamar left join tipe_kamar on kamar.id_tipe = tipe_kamar.id_tipe $sqltambahan";
         $page   = isset($_GET['page'])?(int)$_GET['page']:1;
         $mulai  = ($page > 1) ? ($page * $per_halaman) - $per_halaman : 0;
         $q1     = mysqli_query($koneksi,$sql1);
@@ -87,6 +88,15 @@ if ($sukses) {
                 <td><?php echo $nomor++ ?></td>
                 <td><b><?php echo $r1['nomor_kamar'] ?></b></td>
                 <td><?php echo $r1['nama_tipe'] ?></td>
+                
+                <td>
+                    <?php if ($r1['stok'] == 0) { ?>
+                        <span class="badge bg-danger">Habis</span>
+                    <?php } else { ?>
+                        <span class="badge bg-success"><?php echo $r1['stok']; ?> Tersedia</span>
+                    <?php } ?>
+                </td>
+
                 <td>
                     <?php 
                     // Memberikan warna badge sesuai status kamar

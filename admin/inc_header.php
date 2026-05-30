@@ -37,6 +37,7 @@ $page_name = basename($_SERVER['PHP_SELF']);
                     <div class="navbar-nav">
                         <a class="nav-link <?php echo ($page_name == 'index.php') ? 'active fw-bold text-primary' : ''; ?>" href="index.php">Dashboard</a>
                         <a class="nav-link <?php echo ($page_name == 'kamar.php' || $page_name == 'kamar_input.php') ? 'active fw-bold text-primary' : ''; ?>" href="kamar.php">Kamar</a>
+                        <a class="nav-link <?php echo ($page_name == 'tipe_kamar.php' || $page_name == 'tipe_kamar_input.php') ? 'active fw-bold text-primary' : ''; ?>" href="tipe_kamar.php">Tipe Kamar</a>
                         <a class="nav-link <?php echo ($page_name == 'booking.php' || $page_name == 'booking_edit.php') ? 'active fw-bold text-primary' : ''; ?>" href="booking.php">Pemesanan</a>
                         <a class="nav-link <?php echo ($page_name == 'pembayaran.php') ? 'active fw-bold text-primary' : ''; ?>" href="pembayaran.php">Pembayaran</a>
                         <a class="nav-link <?php echo ($page_name == 'promo.php' || $page_name == 'promo_input.php') ? 'active fw-bold text-primary' : ''; ?>" href="promo.php">Promo</a>
