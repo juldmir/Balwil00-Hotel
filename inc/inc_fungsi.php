@@ -1,12 +1,13 @@
 <?php
-// --- FUNGSI UTAMA (Diperbaiki agar kebal terhadap sub-folder admin) ---
+
 function url_dasar(){
     $direktori = dirname($_SERVER['SCRIPT_NAME']);
+    
     // Jika dipanggil dari dalam folder admin, bersihkan /admin dari komponen URL
     $direktori = str_replace('/admin', '', $direktori);
     
-    // Normalisasi backslash jika berjalan di OS Windows lingkungan lokal
-    $direktori = str_replace('\\', '', $direktori);
+    // PERBAIKAN: Ubah backslash menjadi slash biasa, bukan dihapus kosong
+    $direktori = str_replace('\\', '/', $direktori);
     
     $url_dasar  = "http://".$_SERVER['SERVER_NAME'].$direktori;
     return rtrim($url_dasar, '/');
